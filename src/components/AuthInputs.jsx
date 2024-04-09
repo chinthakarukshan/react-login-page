@@ -16,7 +16,7 @@ const Label = styled.label`
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: ${(props) => props.emailNotValid ? '#f87171' : '#6b7280'};
 `
 
 const Input = styled.input`
@@ -54,7 +54,7 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <ControlContainer>
         <p>
-          <Label>Email</Label>
+          <Label emailNotValid = {emailNotValid}>Email</Label>
           <Input
             type="email"
             className={emailNotValid ? 'invalid' : undefined}
